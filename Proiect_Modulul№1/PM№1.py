@@ -18,6 +18,9 @@ def start(message):
 
 @bot.message_handler(func=lambda message: True)
 def handle_message(message):
+    # Log the user message to the console
+    print(f"User {message.from_user.username} ({message.from_user.id}) sent: {message.text}")
+
     if message.text == 'Catalog🗃️':
         catalog_markup = types.ReplyKeyboardMarkup(resize_keyboard=True, row_width=2)
         motherboard_button = types.KeyboardButton('Plăci de bază 🔗')
